@@ -6,11 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VueJS Test Environment</title>
     <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
-        <button @click="changeLink">Click to Change the Link</button>
-        <a :href="link">Link</a>
+        <div 
+            class="demo" 
+            @click="attachRed = !attachRed"
+            :class="{red: attachRed, blue: !attachRed}">
+        </div>
+        <div class="demo"></div>
+        <div class="demo"></div>
     </div>
     <script src="script.js"></script>
 </body>

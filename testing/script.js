@@ -1,11 +1,12 @@
 new Vue({
     el: "#app",
     data: {
-        link: "http://google.com"
+        attachRed: false
     },
-    methods: {
-        changeLink: function() {
-            this.link = "http://apple.com"
+    divClasses: function() {
+        return {
+            red: this.attachRed,
+            blue: !this.attachRed
         }
     }
 })
