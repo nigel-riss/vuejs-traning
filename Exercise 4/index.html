@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="exercise">
+        <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+        <div>
+            <button @click="startEffect">Start Effect</button>
+            <div id="effect" v-bind:class="effect"></div>
+        </div>
+        <hr>
+        <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+        <div :class="['bold-text', blueText]">I got no class :(</div>
+        <hr>
+        <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+        <div>
+            <input type="text" v-model="classesT3">
+            <div class="box" :class="arrClassesT3"></div>
+        </div>
+        <hr>
+        <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+        <div>
+            <input type="text" v-model="classT4">
+            <input type="text" v-model="allowT4">
+            <div class="box" :class="[classT4, {red: allowT4Comp}]"></div>
+        </div>
+        <hr>
+        <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
+        <div>
+            <input type="text" v-model="stylesT5">
+            <div class="box" :style="stylesT5"></div>
+        </div>
+        <hr>
+        <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+        <div>
+            <button v-on:click="startProgress">Start Progress</button>
+            <div class="progress-bar" :style="{width: pbWidthT6 + 'px'}"></div>
+        </div>
+        <hr>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
