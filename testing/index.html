@@ -9,22 +9,10 @@
 </head>
 <body>
   
-  <div id="app1">
-    <h1 ref="heading">{{ title }}</h1>
-    <button v-on:click="show">Show Paragraph</button>
-    <p v-if="showParagraph">This is not always visible</p>
-  </div>
-  
-  <div id="app2">
-    <h1 ref="heading">{{ title }}</h1>
-    <button v-on:click="onChange">Change title in Vue 1</button>
-    <hello></hello>
-    <hello></hello>
-    <hello></hello>
-  </div>
-
-  <div id="app3">
-
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <button @click="title = 'Changed'">Update Title</button>
+    <button @click="destroy">Destroy</button>
   </div>
   
   <script src="app.js"></script>
