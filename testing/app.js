@@ -1,35 +1,24 @@
-new Vue({
-  el: "#app",
-  data: {
-    title: 'The VueJS Instance'
+var cmp =  {
+  data: function() {
+    return {
+      status: 'Critical'
+    };
   },
-  beforeCreate: function() {
-    console.log('beforeCreate()');
-  },
-  created: function() {
-    console.log('created()');
-  },
-  beforeMount: function() {
-    console.log('beforeMount()');
-  },
-  mounted: function() {
-    console.log('mounted()');
-  },
-  beforeUpdate: function() {
-    console.log('beforeUpdate');
-  },
-  updated: function() {
-    console.log('update()');
-  },
-  beforeDestroy: function() {
-    console.log('beforeDestroy()');
-  },
-  destroyed: function() {
-    console.log('destroyed()');
-  },
+  template: '<p>Server Status: {{ status }} (<button @click="changeStatus">Change</button>)</p>',
   methods: {
-    destroy: function() {
-      this.$destroy();
+    changeStatus: function() {
+      this.status = 'Normal';
     }
   }
+};
+
+new Vue({
+  el: '#app',
+  components: {
+    'my-cmp': cmp
+  }
+})
+
+new Vue({
+  el: '#app2'
 })
